@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="lv">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <script type="importmap">
+          {
+            "imports": {
+              "@material/web/": "https://esm.run/@material/web/"
+            }
+          }
+        </script>
+        <script type="module">
+          import '@material/web/all.js';
+          import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+      
+          document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+        </script>
+        <link rel="stylesheet" href="css/material_design_style.css">
+        <script src="js/material_design_js.js"></script>
+      </head>
+
+<body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <div class="container">
+        <section class="tm-section-head" id="top">
+            <header id="header" class="text-center">
+                <h1 class="md-typescale-display-medium">Materiālais dizains</h1>
+            </header>
+            <style>
+                :root {
+                  background-color: #f4fbfa;
+                  --md-menu-container-color: #f4fbfa;
+                  --md-menu-container-shape: 0px;
+                  --md-sys-color-on-surface: #161d1d;
+                  --md-sys-typescale-body-large-font: system-ui;
+                }
+                md-menu-item {
+                  border-radius: 28px;
+                  padding-right: 30px;
+                }
+                md-menu-item::part(focus-ring) {
+                  border-radius: 28px;
+                }
+                /* Styles for button and not relevant to menu */
+                md-filled-button {
+                  --md-sys-color-primary: #006a6a;
+                  --md-sys-color-on-primary: #ffffff;
+                }
+              </style>
+              
+              <span style="position: relative; margin-right: 100px; margin-bottom: 20px; float: right;">
+                <md-filled-button id="theming-anchor">Izvēlne</md-filled-button>
+                <md-menu id="theming-menu" anchor="theming-anchor">
+                  <md-menu-item>
+                    <div slot="headline">Dizaina principi</div>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <div slot="headline">Priekšrocības</div>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <div slot="headline">Trūkumi</div>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <div slot="headline">Skeumorfais dizains</div>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <div slot="headline">Plakanais dizains</div>
+                  </md-menu-item>
+                </md-menu>
+              </span>
+              
+              <script type="module">
+                const anchorEl = document.body.querySelector("#theming-anchor");
+                const menuEl = document.body.querySelector("#theming-menu");
+              
+                let isMenuOpen = false;  // Variable to keep track of the menu's state
+              
+                anchorEl.addEventListener("click", () => {
+                  if (isMenuOpen) {
+                    menuEl.close();  // Close the menu if it's open
+                    isMenuOpen = false;
+                  } else {
+                    menuEl.show();   // Show the menu if it's not open
+                    isMenuOpen = true;
+                  }
+                });
+              
+                // Additionally, listen for a click on each menu item to close the menu
+                document.querySelectorAll('md-menu-item').forEach(item => {
+                  item.addEventListener('click', () => {
+                    menuEl.close();
+                    isMenuOpen = false;
+                  });
+                });
+              </script>              
+        </section>
+
+        <section class="row" id="tm-section-1">
+            <div class="col-lg-12 tm-slider-col">
+              <div class="tm-img-slider">
+                <div class="mdc-image-list mdc-image-list--masonry with-text-protection">
+                  <div class="mdc-image-list__item">
+                    <img class="mdc-image-list__image" src="images/flat/gallery_image_01.png" alt="Image01">
+                    <div class="mdc-image-list__supporting">
+                      <span class="mdc-image-list__label">Materiālā dizaina ilustrācijas</span>
+                    </div>
+                  </div>
+                  <div class="mdc-image-list__item">
+                    <img class="mdc-image-list__image" src="images/flat/gallery_image_02.png" alt="Image02">
+                    <div class="mdc-image-list__supporting">
+                      <span class="mdc-image-list__label">Materiālā dizaina ilustrācijas</span>
+                    </div>
+                  </div>
+                  <div class="mdc-image-list__item">
+                    <img class="mdc-image-list__image" src="images/flat/gallery_image_03.png" alt="Image03">
+                    <div class="mdc-image-list__supporting">
+                      <span class="mdc-image-list__label">Materiālā dizaina ilustrācijas</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+
+
+        <section class="tm-section-2 tm-section-mb" id="tm-section-2">
+            <h2>Dizaina principi - vadlīnijas</h2>
+            <br>
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-12">            
+                    <p><b>+ Vienkārša tipogrāfija</b></p>
+                    <p>Tipogrāfija ir ne tikai teksta līdzeklis, bet arī nozīmīga paša dizaina sastāvdaļa, kas veicina kopējo vizuālo hierarhiju un virza lietotāja uzmanību, izmantojot burtu biezuma, izmēra un krāsu variācijas. Plakanajam dizainam vislabāk parasti ir izmantot <em>sans-serif</em> burtveidolus.</p>
+                    </div>
+                <div class="col-xl-4 col-lg-4 col-md-12">
+                    <p><b>+ Daudz brīvas vietas saturam</b></p>
+                    <p>Baltā telpa tiek stratēģiski izmantota ne tikai kā estētiska izvēle, bet arī kā funkcionāls elements, kas atdala un grupē saturu, uzlabojot lasāmību un lietotāja fokusu. Atstatums starp elementiem novērš vizuālu jucekli, ļaujot lietotājiem viegli orientēties, izprast saskarnes izkārtojumu un labāk uztvert vietnes saturu.</p>
+                    </div>
+                <div class="col-xl-4 col-lg-4 col-md-12">
+                    <p><b>+ Plakanu ikonu, ilustrāciju un elementu izmantošana</b></p>
+                    <p>Plakano ikonu un ilustrāciju vienkāršība ne tikai nodrošina to tūlītēju atpazīstamību, bet arī veicina ātrāku vietnes ielādes laiku un labāku mērogojamību dažādās ierīcēs, ekrāna izmēros un izšķirtspējās, kas ir būtisks lietotāju apmierinātības faktors.</p>                 
+                </div>  
+                <div class="col-xl-6 col-lg-6 col-md-12">
+                    <p><b>+ Divdimensionālu un vienkāršu dizaina elementu iekļaušana</b></p>
+                    <p>Plakanajā dizainā 2D elementi un vienkāršas formas veido vizuālās valodas pamatu, izvairoties no jebkādiem mēģinājumiem atdarināt reālās pasaules sarežģītību ar 3D ilūzijām.</p>
+                </div>   
+                <div class="col-xl-6 col-lg-6 col-md-12">
+                    <p><b>+ Spilgtas, augsta kontrasta krāsas</b></p>
+                    <p>Plakanajā dizainā krāsām netiek pielietotas krāsu pārejas un ēnas, tā vietā izvēloties vienkrāsainas, spilgtas krāsas, kas pastiprina divdimensiju izskatu.</p>
+                </div>   
+            </div>
+        </section>
+
+        <section class="tm-section-3 tm-section-mb" id="tm-section-3">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-md-5 mb-5 pr-md-5">
+                    <header class="text-center">
+                        <img src="images/flat/icon_01.svg" alt="Home Icon" class="pb-4">
+                    </header>                    
+                    <h2 class="text-center pt-1">Plakanā dizaina ikona</h2>
+                    <h5 class="text-center"><em>Piemērs #1</em></h5>
+                    <p class="text-center">Plakanajām ikonām, kuras tiek izmantotas visbiežāk, ir vienkāršs, divdimensiju dizains ar treknām, vienkrāsainām krāsām, un tām nav nekādu izrotājumu, kas liecina par dziļumu, piemēram, ēnas vai krāsu pārejas.</p>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-md-5 mb-5 pr-md-5">
+                    <header class="text-center">
+                        <img src="images/flat/icon_02.svg" alt="Search Icon" class="pb-4">
+                    </header>  
+                    <h2 class="text-center pt-1">Plakanā dizaina ikona</h2>
+                    <h5 class="text-center"><em>Piemērs #2</em></h5>
+                    <p class="text-center">Plakanā dizaina ikonas uzlabo lietotāja pieredzi, jo tās koncentrējas uz objekta būtību, tādējādi padarot digitālo vidi intuitīvāku.</p>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-md-5 mb-5 pr-md-5 mx-auto">
+                    <header class="text-center">
+                        <i class="fa fa-4x fa-power-off pl-5 pb-5 pr-5 pt-2"></i>
+                    </header>
+                    <h2 class="text-center">Kontūru ikona</h2>
+                    <h5 class="text-center"><em>Piemērs #3</em></h5>
+                    <p class="text-center">Kontūru ikonas, kurām raksturīgas atšķirīgas kontūras un pildījuma neesamība, nodrošina vieglu un gaisīgu dizainu, kas papildina plakanā dizaina uzsvaru uz vienkāršību.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tm-section-5 tm-section-mb" id="tm-section-5">
+            <div class="row">
+                <div class="col-md-6 tm-mb-sm-4 tm-2col-l">
+                    <div class="image">
+                        <img src="images/flat/advantages.svg" class="img-fluid" />
+                    </div>
+                    <div class="tm-box-3">
+                        <h2>Priekšrocības</h2>
+                        <p>Plakanais dizains piedāvā vairākas priekšrocības, kas padara to par populāru izvēli digitālajām saskarnēm. Vislabāk der ttmekļa vietnēm, kurās prioritāte ir skaidrība un navigācijas vienkāršība, bet nav nepieciešama ļoti interaktīva saskarne.</p>
+                        <div class="text-center">
+                            <a href="#tm-section-6" class="btn btn-big">Lasīt vairāk</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 tm-2col-r">
+                    <div class="image">
+                        <img src="images/flat/disadvantages.svg" class="img-fluid" />
+                    </div>
+                    <div class="tm-box-3">
+                        <header>
+                            <h2>Trūkumi</h2>
+                        </header>
+                        <p>Plakanais dizains rada arī dažus trūkumus, kurus dizaineriem ir jāņem vērā. Šie trūkumi uzsver pārdomātu dizaina lēmumu nozīmi un iespējamo vajadzību iekļaut elementus no citām dizaina pieejām, lai uzlabotu lietojamību un lietotāja pieredzi.</p>
+                        <div class="text-center">
+                            <a href="#tm-section-7" class="btn btn-big">Lasīt vairāk</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tm-section-4 tm-section-mb" id="tm-section-4">
+            <div class="row">
+            </div>
+        </section>
+
+        <section class="tm-section-6" id="tm-section-6">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="image fit">
+                        <img src="images/flat/advantages_all.svg" class="img-fluid d-none d-lg-block">
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-12 col-sm-12 pl-lg-0">
+                    <div class="media tm-media">
+                        <div class="tm-box-5">
+                            <h2>Uzlabota lietotāja pieredze un fokuss uz saturu</h2>
+                            <p class="mb-0">Izmantojot plakanajam dizainam raksturīgos principus, tiek radīta skaidra vizuālā hierarhija un nepārblīvēts, moderns vietnes izskats, kurā saturs ir prioritārs.</p>
+                        </div>
+                    </div>
+                    <div class="media tm-media">
+                        <div class="tm-box-5">
+                            <h2>Ātrāks ielādes laiks</h2>
+                            <p class="mb-0">Izmantojot stilam raksturīgās īpašības, tiek samazināts datu apjoms, kas jālejupielādē, piekļūstot lapai. Šī pieeja ne tikai uzlabo lietotāju pieredzi, samazinot gaidīšanas laiku, bet arī pozitīvi ietekmē SEO klasifikāciju, jo meklētājprogrammas bieži dod priekšroku vietnēm ar ātrāku ielādes laiku.</p>
+                        </div>
+                    </div>
+                    <div class="media tm-media">
+                        <div class="tm-box-5">
+                            <h2>Mērogojamība</h2>
+                            <p class="mb-0">Plakano dizaina elementu vienkāršība padara tos viegli mērogojamus un dizaini izskatās izteiksmīgi un skaidri dažādos ekrāna izmēros un izšķirtspējās.</p>
+                        </div>
+                    </div>
+                    <div class="media tm-media">
+                        <div class="tm-box-5">
+                            <h2>Simetrisks, režģa izkārtojums</h2>
+                            <p class="mb-0">Plakanā dizainā bieži tiek izmantoti simetriski, uz režģi balstīti izkārtojumi, lai sakārtotu saturu vizuāli pievilcīgā un loģiskā veidā. Būtībā tiem ir galvenā loma satura un elementu strukturēšanā saskarnē, nodrošinot konsekvenci un līdzsvaru dizainā un atvieglojot lietotājiem navigāciju.</p>
+                        </div>
+                    </div>
+                    <div class="media tm-media">
+                        <div class="tm-box-5">
+                            <h2>Atbilst mūsdienu tendencēm</h2>
+                            <p class="mb-0">Plakanais dizains atbilst mūsdienu lietotāju vienkāršības un funkcionalitātes vēlmēm, padarot to populāru pašreizējās UI/UX dizaina tendencēs. Laikā, kad digitālajam saturam var piekļūt no neskaitāmām ierīcēm, plakanā dizaina vienkāršība, mērogojamība un ātra ielāde nodrošina, ka tas joprojām ir efektīvs un vizuāli pievilcīgs neatkarīgi no ierīces.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tm-section-4 tm-section-mb" id="tm-section-4">
+            <div class="row">
+            </div>
+        </section>
+
+        <section class="tm-section-7"id="tm-section-7">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="image fit">
+                        <img src="images/flat/disadvantages_all.svg" class="img-fluid d-none d-lg-block">
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-12 col-sm-12 pl-lg-0">
+                    <div class="media tm-media">
+                        <div class="media-body tm-box-5">
+                            <h2>Lietojamības problēmas</h2>
+                            <p class="mb-0">Bez tradicionālajām norādēm, piemēram, ēnām un faktūrām, kas liecina par interaktivitāti, lietotājiem var būt grūtāk atšķirt noklikšķināmus elementus no statiskiem, kas var radīt apjukumu.</p>
+                        </div>
+                    </div>
+                    <div class="media tm-media">
+                        <div class="media-body tm-box-5">
+                            <h2>Pārmērīga vienkāršošana</h2>
+                            <p class="mb-0">Plakana dizaina minimālistiskais raksturs dažkārt var izraisīt vizuālā dziļuma un daudzveidības trūkumu, kā arī pārāk daudzu vizuālo norāžu likvidēšanu, kā rezultātā saskarnes ir pārāk vienkāršotas, viendabīgas vai lietotājiem mulsinošas, un tās var nebūt piemērotas visiem satura veidiem vai mērķauditorijām.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tm-section-8" id="tm-section-8">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-xs-12">
+                    <div class="contact_message">
+                        <form action="" method="post" class="contact-form">
+                            <div class="row mb-2">
+                                <div class="form-group col-xl-6">
+                                    <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Vārds" required/>
+                                </div>
+                                <div class="form-group col-xl-6 pl-xl-1">
+                                    <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="E-pasts" required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="contact_message" name="contact_message" class="form-control" rows="6" placeholder="Ziņojums" required></textarea>
+                            </div>
+                            <button type="submit" class="btn  tm-btn-submit float-right btn-big">Nosūtīt</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-5 col-xs-12 tm-contact-right">
+                    <div class="tm-address-box">
+                        <h2 class="mb-4">Piemērs</h2>
+                        <p class="mb-5"><em>Formā ir izmantots minimālistisks dizains, izvairoties no nevajadzīgiem grafiskiem elementiem, piemēram, krāsu pārejām, ēnām vai faktūrām, kas varētu radīt 3D efektu. Strukturētais izkārtojums uzlabo skaidrību un lasāmību.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="mt-5">
+        </footer>
+    </div>
+</body>
+</html>

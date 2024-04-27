@@ -1,0 +1,50 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+
+  }
+  
+  .text-center {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.mdc-image-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1280px, 1fr));
+  grid-gap: 16px;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.mdc-image-list__item {
+  list-style-type: none;
+  position: relative;
+  display: none;
+}
+
+.mdc-image-list__item.active {
+  display: block; /* Only show the active slide */
+}
+
+.mdc-image-list__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.mdc-image-list__supporting {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 8px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  text-align: center;
+}
+
+.mdc-image-list__label {
+  font-size: 16px;
+}
+
