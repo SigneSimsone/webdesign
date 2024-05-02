@@ -1,25 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="lv">
 
 <head>
   <title>Materiālais dizains</title>
-  <!-- Required meta tags -->
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <!--     Fonts and icons     -->
+
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-  <!-- Material Kit CSS -->
   <link rel="stylesheet" href="css/material_design_style.css">
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="js/material_design_js.js"></script>
 </head>
 
 <body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg blur border-radius-xl mt-4 top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
     <div class="container-fluid px-0">
@@ -144,9 +147,11 @@
                           <h5 class="modal-title" id="Modal1">Kustība</h5>
                         </div>
                         <div class="modal-body">
-                            Pārdomāta kustība var vadīt lietotājus digitālajā telpā, sniedzot vizuālas norādes un informējot lietotājus par elementu funkcionalitāti un interaktivitāti, piemēram, norādot vienumus, uz kuriem var noklikšķināt, vai parādīt darbības rezultātu, kā arī, piemēram, animācijas var norādīt uz izvēlnes paplašināšanu, papildus satura ielādi vai darbības apstiprināšanu, padarot saskarni atsaucīgāku un intuitīvāku un parādot saistību starp saskarnes elementiem un lietotāja darbībām.
-                          <br><br>
-                          Tomēr galvenais, lai kustības efektīvi izmantotu, ir mērenībā un mērķtiecībā; tai vajadzētu kalpot, lai uzlabotu lietojamību un papildinātu dizaina estētiku, nevis novērstu uzmanību vai apgrūtinātu.
+                            Pārdomāta kustība var vadīt lietotājus digitālajā telpā, sniedzot vizuālas norādes un informējot lietotājus par elementu funkcionalitāti un interaktivitāti, piemēram, norādot vienumus, uz kuriem var noklikšķināt, vai parādīt darbības rezultātu.
+                            <br><br>
+                            Animācijas var norādīt uz izvēlnes paplašināšanu, papildus satura ielādi vai darbības apstiprināšanu, padarot saskarni atsaucīgāku un intuitīvāku un parādot saistību starp saskarnes elementiem un lietotāja darbībām.
+                            <br><br>
+                            Tomēr galvenais, lai kustības efektīvi izmantotu, ir mērenībā un mērķtiecībā; tām vajadzētu kalpot, lai uzlabotu lietojamību un papildinātu dizaina estētiku, nevis novērstu uzmanību vai apgrūtinātu.
                         </div>
                         <div class="modal-footer float-right">
                           <button type="button" class="btn bg-gradient-dark mb-0" data-bs-dismiss="modal">Aizvērt</button>
@@ -219,7 +224,12 @@
                                     <h5 class="modal-title" id="Modal3">Neuzkrītošs elementu dziļums</h5>
                                     </div>
                                     <div class="modal-body">
-                                    Materiālu dizainā ar neuzkrītošu elementu dziļumu tiek ieviestas dimensijas un hierarhijas sajūta plakanajos attēlos, taču tas neatgriežas pie pilnīga skeumorfisma. Tas tiek panākts efektīvi izmantojot gaišas ēnas, balstoties uz reālās pasaules optikas likumiem, slāņojumu un nelielas krāsu pārejas, kas liecina par slāņveida saskarni, kurā daži elementi, šķiet, peld virs citiem. Šis paņēmiens uzlabo lietojamību, padarot interaktīvos elementus, piemēram, pogas un saites, pamanāmākus, novirzot lietotāja uzmanību uz darbībām, ko var izmantot. 
+                                    Materiālajā dizainā ar neuzkrītošu elementu dziļumu tiek ieviestas dimensijas un hierarhijas sajūta plakanajos attēlos, taču tas neatgriežas pie pilnīga skeumorfisma.
+                                    Tas tiek panākts efektīvi izmantojot gaišas ēnas, balstoties uz reālās pasaules optikas likumiem, slāņojumu un nelielas krāsu pārejas, kas liecina par slāņveida saskarni, kurā daži elementi, šķiet, peld virs citiem.
+                                    <br><br>
+                                    Šis paņēmiens uzlabo lietojamību, padarot interaktīvos elementus, piemēram, pogas un saites, pamanāmākus, novirzot lietotāja uzmanību uz darbībām, ko var izmantot.
+                                    <br><br>
+                                    Galvenais ir saglabāt līdzsvaru; dziļums ir pietiekami neuzkrītošs, lai nepārslogotu minimālisma estētiku, bet pietiekami izteikts, lai sniegtu skaidrus navigācijas norādījumus.
                                     </div>
                                     <div class="modal-footer float-right">
                                     <button type="button" class="btn bg-gradient-dark mb-0" data-bs-dismiss="modal">Aizvērt</button>
@@ -254,10 +264,10 @@
                                       <h5 class="modal-title" id="Modal4">Spilgtas krāsu shēmas</h5>
                                       </div>
                                       <div class="modal-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Galvenās un sekundārās krāsas, kas bieži atspoguļo zīmola identitāti, tiek izmantotas, lai izceltu galvenos elementus un darbības, nodrošinot tūlītēju atpazīšanu un konsekvenci visā saskarnē.
                                         <br><br>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                      </div>
+                                        Galvenā krāsa ir tā, kas visbiežāk tiek izmantota tīmekļa vietnes saskarnē. Sekundārā krāsa ir krāsa, kuru izmanto, lai akcentētu lietotāja saskarnes galvenās daļas. Galveno krāsu var izmantot arī elementu akcentēšanai, ja netiek izmantota sekundārā krāsa. Lai izveidotu kontrastu starp elementiem, var izmantot gaišākus vai tumšākus galvenās krāsas toņus - tas palīdz parādīt sadalījumu starp virsmām un elementiem.
+                                        </div>
                                       <div class="modal-footer float-right">
                                       <button type="button" class="btn bg-gradient-dark mb-0" data-bs-dismiss="modal">Aizvērt</button>
                                       </div>
@@ -278,25 +288,25 @@
                   <div class="row">
                     <div class="col-md-4 position-relative">
                       <div class="p-3 text-center">
-                        <img src="images/material/home-icon1.png" alt="Home Icon" class="pb-4">
-                        <h5 class="mt-3">Ikona</h5>
-                        <p class="text-sm font-weight-normal">Apraksts par ikonu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <img src="images/material/home-icon.png" alt="Home Icon" class="pb-4">
+                        <h5 class="mt-3">Ikona #1</h5>
+                        <p class="text-sm font-weight-normal">Ikonas ir būtisks jebkuras saskarnes elements, kas sniedz informatīvu efektu nelielā formā. Ikonu stilam jābūt konsekventam visā vietnē.</p>
                       </div>
                       <hr class="vertical dark">
                     </div>
                     <div class="col-md-4 position-relative">
                       <div class="p-3 text-center">
-                        <img src="images/material/search-icon1.png" alt="Search Icon" class="pb-4">
-                        <h5 class="mt-3">Ikona</h5>
-                        <p class="text-sm font-weight-normal">Apraksts par ikonu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <img src="images/material/search-icon.png" alt="Search Icon" class="pb-4">
+                        <h5 class="mt-3">Ikona #2</h5>
+                        <p class="text-sm font-weight-normal">Lai nodrošinātu konsekvenci un lasāmību, to ierobežotais izmērs nozīmē, ka katrai ikonai ir stingri jāievēro vadlīnijas, vienlaikus parādot būtiskās īpašības.</p>
                       </div>
                       <hr class="vertical dark">
                     </div>
                     <div class="col-md-4">
                       <div class="p-3 text-center">
                         <i class="fa fa-4x fa-power-off pl-5 pb-icon pr-5 pt-4"></i>
-                        <h5 class="mt-3">Ikona</h5>
-                        <p class="text-sm font-weight-normal">Apraksts par ikonu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h5 class="mt-3">Ikona #3</h5>
+                        <p class="text-sm font-weight-normal">Ikonām jābūt grafiskām un treknām, neizmantojot smalkas vai precīzas formas. Tās jāveido pēc iespējas vienkāršāk un modernāk.</p>
                       </div>
                     </div>
                   </div>
@@ -325,7 +335,7 @@
                         <div class="card-body ps-lg-0">
                           <h5 class="mb-0">Reaģējošs izkārtojums</h5>
                           <h6 class="text-green font-italic">Priekšrocība #1</h6>
-                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <p class="mb-0">Reaģējošais izkārtojums un pielāgojamība nodrošina, ka tiek piedāvāta konsekventa un intuitīva lietotāja pieredze dažādās ierīcēs un ekrāna izmēros.</p>
                         </div>
                       </div>
                     </div>
@@ -363,7 +373,7 @@
                         <div class="card-body ps-lg-0">
                           <h5 class="mb-0">Vizuālā pievilcība, animācijas</h5>
                           <h6 class="text-green font-italic">Priekšrocība #2</h6>
-                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <p class="mb-0">Materiālā dizaina animācijas ir vairāk nekā tikai vizuāli uzlabojumi; tās kalpo, lai palīdzētu lietotājiem mijiedarboties ar vietni, padarot saskarni intuitīvāku. </p>
                         </div>
                       </div>
                     </div>
@@ -381,7 +391,7 @@
                         <div class="card-body ps-lg-0">
                           <h5 class="mb-0">Pārāk daudz krāsu un animāciju</h5>
                           <h6 class="text-green font-italic">Trūkums #2</h6>
-                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <p class="mb-0">Daudzu krāsu un elementu izmantošana var apgrūtināt lietotājus, jo īpaši tos, kuriem ir redzes traucējumi vai tos, kuri dod priekšroku vienkāršākam dizainam.</p>
                         </div>
                       </div>
                     </div>
@@ -400,7 +410,7 @@
                       <div class="p-3 text-center">
                         <h1 class="text-gradient text-primary"><span id="state1" countTo="70">1</span></h1>
                         <h5 class="mt-3">Versija</h5>
-                        <p class="text-sm font-weight-normal">Apraksts par versiju. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p class="text-sm font-weight-normal">Šīs valodas izveides galvenais mērķis bija apvienot laba dizaina principus ar tehniskiem jauninājumiem. Tas ļāva arī apvienot <em>Google</em> lietojumprogrammu dizainu. Šajā versijā raksturīgi ir, piemēram, <em>Roboto</em> fonti, kantaini stūri elementiem, melnbaltas ikonas.</p>
                       </div>
                       <hr class="vertical dark">
                     </div>
@@ -408,7 +418,7 @@
                       <div class="p-3 text-center">
                         <h1 class="text-gradient text-primary"> <span id="state2" countTo="15">2</span></h1>
                         <h5 class="mt-3">Versija</h5>
-                        <p class="text-sm font-weight-normal">Apraksts par versiju. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p class="text-sm font-weight-normal">Galvenās atšķirības no iepriekšējās versijas ir kosmētisks elementu atjauninājums, piemēram, noapaļoti elementu stūri, košākas krāsu shēmas, plašāka baltā vieta izkārtojumā, <em>Google Sans</em> fonti, taču abas versijas ir strikti standartizētas.</p>
                       </div>
                       <hr class="vertical dark">
                     </div>
@@ -416,7 +426,7 @@
                       <div class="p-3 text-center">
                         <h1 class="text-gradient text-primary" id="state3" countTo="4">3</h1>
                         <h5 class="mt-3">Versija</h5>
-                        <p class="text-sm font-weight-normal">Apraksts par versiju. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p class="text-sm font-weight-normal">Arī šajā versijā ir kosmētisks komponentu atjauninājums, taču kopumā ir redzamas drastiskākas izmaiņas. Vairāk pievērsta uzmanība ir personalizēšanas iespējām, kopējais izskats nav tik strikts un nopietns kā iepriekšējās versijās. Veikta optimizācija dažādām krāsām un formām, krāsas ir pielāgojamas, elementiem ir noapaļoti stūri, mazāk dramatisku ēnu, vairāk baltās vietas izkārtojumā. </p>
                       </div>
                     </div>
                   </div>
@@ -439,8 +449,8 @@
                       <div class="col-lg-7">
                         <form class="p-3" id="contact-form">
                           <div class="card-header px-4 py-sm-3 py-2">
-                            <h2>Piemērs</h2>
-                            <p class="lead font-italic">Apraksts par formu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <h3>Piemērs</h3>
+                            <p class="lead font-italic">Formā ir izmantots minimālistisks dizains, kas papildināts ar krāsu animāciju katrā laukā, tādējādi liecinot par interaktivitāti. Strukturētais izkārtojums un īsi lauku nosaukumi uzlabo skaidrību un lasāmību.</p>
                           </div>
                           <div class="card-body pt-1">
                             <div class="row">
