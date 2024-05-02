@@ -1,124 +1,423 @@
-<!DOCTYPE html>
-<html lang="lv">
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-        <script type="importmap">
-          {
-            "imports": {
-              "@material/web/": "https://esm.run/@material/web/"
-            }
-          }
-        </script>
-        <script type="module">
-          import '@material/web/all.js';
-          import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
-      
-          document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-        </script>
-        <link rel="stylesheet" href="css/material_design_style.css">
-        <script src="js/material_design_js.js"></script>
-      </head>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Materiālais dizains</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <!-- Material Kit CSS -->
+  <link rel="stylesheet" href="css/material_design_style.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
 
 <body>
-    <div id="loader-wrapper">
-        <div id="loader"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
-    <div class="container">
-        <section class="tm-section-head" id="top">
-            <header id="header" class="text-center">
-                <h1 class="md-typescale-display-medium">Materiālais dizains</h1>
-            </header>
-            <style>
-                :root {
-                  background-color: #f4fbfa;
-                  --md-menu-container-color: #f4fbfa;
-                  --md-menu-container-shape: 0px;
-                  --md-sys-color-on-surface: #161d1d;
-                  --md-sys-typescale-body-large-font: system-ui;
-                }
-                md-menu-item {
-                  border-radius: 28px;
-                  padding-right: 30px;
-                }
-                md-menu-item::part(focus-ring) {
-                  border-radius: 28px;
-                }
-                /* Styles for button and not relevant to menu */
-                md-filled-button {
-                  --md-sys-color-primary: #006a6a;
-                  --md-sys-color-on-primary: #ffffff;
-                }
-              </style>
-              
-              <span style="position: relative; margin-right: 100px; margin-bottom: 20px; float: right;">
-                <md-filled-button id="theming-anchor">Izvēlne</md-filled-button>
-                <md-menu id="theming-menu" anchor="theming-anchor">
-                  <md-menu-item>
-                    <div slot="headline">Dizaina principi</div>
-                  </md-menu-item>
-                  <md-menu-item>
-                    <div slot="headline">Priekšrocības</div>
-                  </md-menu-item>
-                  <md-menu-item>
-                    <div slot="headline">Trūkumi</div>
-                  </md-menu-item>
-                  <md-menu-item>
-                    <div slot="headline">Skeumorfais dizains</div>
-                  </md-menu-item>
-                  <md-menu-item>
-                    <div slot="headline">Plakanais dizains</div>
-                  </md-menu-item>
-                </md-menu>
-              </span>
-              
-              <script type="module">
-                const anchorEl = document.body.querySelector("#theming-anchor");
-                const menuEl = document.body.querySelector("#theming-menu");
-              
-                let isMenuOpen = false;  // Variable to keep track of the menu's state
-              
-                anchorEl.addEventListener("click", () => {
-                  if (isMenuOpen) {
-                    menuEl.close();  // Close the menu if it's open
-                    isMenuOpen = false;
-                  } else {
-                    menuEl.show();   // Show the menu if it's not open
-                    isMenuOpen = true;
-                  }
-                });
-              
-                // Additionally, listen for a click on each menu item to close the menu
-                document.querySelectorAll('md-menu-item').forEach(item => {
-                  item.addEventListener('click', () => {
-                    menuEl.close();
-                    isMenuOpen = false;
-                  });
-                });
-              </script>              
-        </section>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg blur border-radius-xl mt-4 top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+    <div class="container-fluid px-0">
+      <a class="navbar-brand font-weight-bolder ms-sm-3 text-light px-lg-6" href="material_design.html">
+        Materiālais dizains
+      </a>
+      <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon mt-2">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100 px-6" id="navigation">
+        <ul class="navbar-nav navbar-nav-hover ms-auto">
+          <li class="nav-item dropdown dropdown-hover mx-2">
+            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center text-light font-weight-bolder px-3" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
+              Sadaļas
+              <img src="images/material/down-arrow-white.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
+            </a>
+            <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3" aria-labelledby="dropdownMenu1">
+              <div class="d-none d-lg-block">
+                    <a href="#section-1" class="dropdown-item border-radius-md text-dark font-weight-bolder">
+                    <span>Dizaina principi</span>
+                    </a>
+                    <a href="#section-2" class="dropdown-item border-radius-md text-dark font-weight-bolder">
+                    <span>Priekšrocības</span>
+                    </a>
+                    <a href="#section-2" class="dropdown-item border-radius-md text-dark font-weight-bolder">
+                    <span>Trūkumi</span>
+                    </a>
+                </div>
+                <div class="d-lg-none">
+                    <a href="#section-1" class="dropdown-item border-radius-md text-dark font-weight-bolder">
+                    <span>Dizaina principi</span>
+                    </a>
+                    <a href="#section-2" class="dropdown-item border-radius-md text-dark font-weight-bolder">
+                    <span>Priekšrocības</span>
+                    </a>
+                    <a href="#section-2" class="dropdown-item border-radius-md text-dark font-weight-bolder">
+                    <span>Trūkumi</span>
+                    </a>
+                </div>
+            </div>
+          </li>
+        
 
-        <section class="row" id="tm-section-1">
-            <div class="col-lg-12 tm-slider-col">
-              <div class="tm-img-slider">
-                <div class="mdc-image-list mdc-image-list--masonry with-text-protection">
-                  <div class="mdc-image-list__item">
-                    <img class="mdc-image-list__image" src="images/flat/gallery_image_01.png" alt="Image01">
-                    <div class="mdc-image-list__supporting">
-                      <span class="mdc-image-list__label">Materiālā dizaina ilustrācijas</span>
+              <li class="nav-item dropdown dropdown-hover mx-2">
+                <a class="nav-link ps-2 d-flex cursor-pointer align-items-center text-light font-weight-bolder" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                  Citi stili
+                  <img src="images/material/down-arrow-white.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
+                </a>
+                <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3" aria-labelledby="dropdownMenu2">
+                  <div class="d-none d-lg-block">
+                        <a href="flat_design.html" class="dropdown-item border-radius-md text-dark font-weight-bolder">
+                        <span>Plakanais dizains</span>
+                        </a>
+                        <a href="index.html" class="dropdown-item border-radius-md text-dark font-weight-bolder">
+                        <span>Skeumorfais dizains</span>
+                        </a>
+                    </div>
+                    <div class="d-lg-none">
+                        <a href="flat_design.html" class="dropdown-item border-radius-md text-dark font-weight-bolder">
+                            <span>Plakanais dizains</span>
+                            </a>
+                            <a href="index.html" class="dropdown-item border-radius-md text-dark font-weight-bolder">
+                            <span>Skeumorfais dizains</span>
+                        </a>
+                    </div>
+                </div>
+              </li>
+            </ul>      
+            </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
+
+  <div class="page-header min-vh-80" style="background-image: url('images/material/bg.jpeg');">
+    <span class="mask bg-gradient-dark opacity-6"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="text-center">
+            <h1 class="text-white">Materiālais dizains</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
+    <div class="container">
+      <div class="section text-center" id = "section-1">
+        <h2 class="title mt-3 mb-3">Dizaina principi</h2>
+        <section class="py-3">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                  <div class="card card-plain">
+                    <div class="card-header p-0 position-relative">
+                      <a class="d-block blur-shadow-image">
+                        <img src="images/material/motion.svg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy">
+                      </a>
+                    </div>
+                    <div class="card-body px-0">
+                      <h5>
+                        <a class="text-dark font-weight-bold">Kustība</a>
+                      </h5>
+                      <!-- Button trigger modal -->
+                        <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#Modal1">
+                            Lasīt vairāk
+                        </button>
+            
+                  <!-- Modal -->
+                  <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="Modal1" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="Modal1">Kustība</h5>
+                        </div>
+                        <div class="modal-body">
+                            Pārdomāta kustība var vadīt lietotājus digitālajā telpā, sniedzot vizuālas norādes un informējot lietotājus par elementu funkcionalitāti un interaktivitāti, piemēram, norādot vienumus, uz kuriem var noklikšķināt, vai parādīt darbības rezultātu, kā arī, piemēram, animācijas var norādīt uz izvēlnes paplašināšanu, papildus satura ielādi vai darbības apstiprināšanu, padarot saskarni atsaucīgāku un intuitīvāku un parādot saistību starp saskarnes elementiem un lietotāja darbībām.
+                          <br><br>
+                          Tomēr galvenais, lai kustības efektīvi izmantotu, ir mērenībā un mērķtiecībā; tai vajadzētu kalpot, lai uzlabotu lietojamību un papildinātu dizaina estētiku, nevis novērstu uzmanību vai apgrūtinātu.
+                        </div>
+                        <div class="modal-footer float-right">
+                          <button type="button" class="btn bg-gradient-dark mb-0" data-bs-dismiss="modal">Aizvērt</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="mdc-image-list__item">
-                    <img class="mdc-image-list__image" src="images/flat/gallery_image_02.png" alt="Image02">
-                    <div class="mdc-image-list__supporting">
-                      <span class="mdc-image-list__label">Materiālā dizaina ilustrācijas</span>
+                      
                     </div>
                   </div>
-                  <div class="mdc-image-list__item">
-                    <img class="mdc-image-list__image" src="images/flat/gallery_image_03.png" alt="Image03">
-                    <div class="mdc-image-list__supporting">
-                      <span class="mdc-image-list__label">Materiālā dizaina ilustrācijas</span>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                  <div class="card card-plain">
+                    <div class="card-header p-0 position-relative">
+                      <a class="d-block blur-shadow-image">
+                        <img src="images/material/simplicity.svg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy">
+                      </a>
+                    </div>
+                    <div class="card-body px-0">
+                      <h5>
+                        <a class="text-dark font-weight-bold">Vienkāršība un skaidrība</a>
+                      </h5>
+                      <!-- Button trigger modal -->
+                <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#Modal2">
+                    Lasīt vairāk
+                  </button>
+            
+                  <!-- Modal -->
+                  <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="Modal2" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="Modal2">Vienkāršība un skaidrība</h5>
+                        </div>
+                        <div class="modal-body">
+                            Šie principi piešķir prioritāti tīram, nepārblīvētam izskatam, kas koncentrējas uz lietotāja saskarnes galveno saturu un funkcionalitāti, noņemot visus liekos elementus, kas neatbalsta lietotāja uzdevumus.
+                            <br><br>
+                            Uzsvars uz vienkāršību nodrošina, ka dizaini ir intuitīvi un tajos ir viegli orientēties, palīdzot lietotājiem sasniegt savus mērķus ar minimālu piepūli. Skaidrība tiek panākta, rūpīgi veidojot vizuālos elementus, tostarp tipogrāfiju, krāsas un izkārtojumu, lai informāciju nodotu skaidri un efektīvi.
+                        </div>
+                        <div class="modal-footer float-right">
+                          <button type="button" class="btn bg-gradient-dark mb-0" data-bs-dismiss="modal">Aizvērt</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                  <div class="card card-plain">
+                    <div class="card-header p-0 position-relative">
+                      <a class="d-block blur-shadow-image">
+                        <img src="images/material/depth.svg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy">
+                      </a>
+                    </div>
+                    <div class="card-body px-0">
+                      <h5>
+                        <a class="text-dark font-weight-bold">Neuzkrītošs elementu dziļums</a>
+                      </h5>
+ 
+                      <!-- Button trigger modal -->
+                        <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#Modal3">
+                            Lasīt vairāk
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="Modal3" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="Modal3">Neuzkrītošs elementu dziļums</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                    Materiālu dizainā ar neuzkrītošu elementu dziļumu tiek ieviestas dimensijas un hierarhijas sajūta plakanajos attēlos, taču tas neatgriežas pie pilnīga skeumorfisma. Tas tiek panākts efektīvi izmantojot gaišas ēnas, balstoties uz reālās pasaules optikas likumiem, slāņojumu un nelielas krāsu pārejas, kas liecina par slāņveida saskarni, kurā daži elementi, šķiet, peld virs citiem. Šis paņēmiens uzlabo lietojamību, padarot interaktīvos elementus, piemēram, pogas un saites, pamanāmākus, novirzot lietotāja uzmanību uz darbībām, ko var izmantot. 
+                                    </div>
+                                    <div class="modal-footer float-right">
+                                    <button type="button" class="btn bg-gradient-dark mb-0" data-bs-dismiss="modal">Aizvērt</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card card-plain">
+                      <div class="card-header p-0 position-relative">
+                        <a class="d-block blur-shadow-image">
+                          <img src="images/material/color.svg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy">
+                        </a>
+                      </div>
+                      <div class="card-body px-0">
+                        <h5>
+                          <a class="text-dark font-weight-bold">Spilgtas krāsu shēmas</a>
+                        </h5>
+
+                        <!-- Button trigger modal -->
+                          <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#Modal4">
+                              Lasīt vairāk
+                          </button>
+                          <!-- Modal -->
+                          <div class="modal fade" id="Modal4" tabindex="-1" aria-labelledby="Modal4" aria-hidden="true">
+                              <div class="modal-dialog">
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                      <h5 class="modal-title" id="Modal4">Spilgtas krāsu shēmas</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        <br><br>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                      </div>
+                                      <div class="modal-footer float-right">
+                                      <button type="button" class="btn bg-gradient-dark mb-0" data-bs-dismiss="modal">Aizvērt</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="pt-3 pb-4" id="count-stats">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-9 mx-auto py-3">
+                  <div class="row">
+                    <div class="col-md-4 position-relative">
+                      <div class="p-3 text-center">
+                        <img src="images/material/home-icon1.png" alt="Home Icon" class="pb-4">
+                        <h5 class="mt-3">Ikona</h5>
+                        <p class="text-sm font-weight-normal">Apraksts par ikonu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                      <hr class="vertical dark">
+                    </div>
+                    <div class="col-md-4 position-relative">
+                      <div class="p-3 text-center">
+                        <img src="images/material/search-icon1.png" alt="Search Icon" class="pb-4">
+                        <h5 class="mt-3">Ikona</h5>
+                        <p class="text-sm font-weight-normal">Apraksts par ikonu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                      <hr class="vertical dark">
+                    </div>
+                    <div class="col-md-4">
+                      <div class="p-3 text-center">
+                        <i class="fa fa-4x fa-power-off pl-5 pb-icon pr-5 pt-4"></i>
+                        <h5 class="mt-3">Ikona</h5>
+                        <p class="text-sm font-weight-normal">Apraksts par ikonu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="pb-5 position-relative bg-gradient-dark-green mx-n3" id="section-2">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 text-start mb-5 mt-5">
+                  <h3 class="text-white z-index-1 position-relative text-center">Priekšrocības un trūkumi</h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 col-12">
+                  <div class="card card-profile mt-4">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-6 col-12 mt-n5">
+                          <div class="p-3 pe-md-0">
+                            <img class="w-100 border-radius-md shadow-lg" src="images/material/scalability.svg" alt="image">
+                          </div>
+                      </div>
+                      <div class="col-lg-8 col-md-6 col-12 my-auto">
+                        <div class="card-body ps-lg-0">
+                          <h5 class="mb-0">Reaģējošs izkārtojums</h5>
+                          <h6 class="text-green font-italic">Priekšrocība #1</h6>
+                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                  <div class="card card-profile mt-lg-4 mt-5">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-6 col-12 mt-n5">
+                          <div class="p-3 pe-md-0">
+                            <img class="w-100 border-radius-md shadow-lg" src="images/material/performance.png" alt="image">
+                          </div>
+                      </div>
+                      <div class="col-lg-8 col-md-6 col-12 my-auto">
+                        <div class="card-body ps-lg-0">
+                          <h5 class="mb-0">Veiktspēja uz dažādām ierīcēm</h5>
+                          <h6 class="text-green font-italic">Trūkums #1</h6>
+                          <p class="mb-0">Bagātīgās animācijas un dziļuma efekti var būt resursietilpīgi un izraisīt veiktspējas problēmas, potenciāli ietekmējot mazāk jaudīgu ierīču veiktspēju.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col-lg-6 col-12">
+                  <div class="card card-profile mt-4 z-index-2">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-6 col-12 mt-n5">
+                          <div class="p-3 pe-md-0">
+                            <img class="w-100 border-radius-md shadow-lg" src="images/material/animation.svg" alt="image">
+                          </div>
+                      </div>
+                      <div class="col-lg-8 col-md-6 col-12 my-auto">
+                        <div class="card-body ps-lg-0">
+                          <h5 class="mb-0">Vizuālā pievilcība, animācijas</h5>
+                          <h6 class="text-green font-italic">Priekšrocība #2</h6>
+                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                  <div class="card card-profile mt-lg-4 mt-5 z-index-2">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-6 col-12 mt-n5">
+                          <div class="p-3 pe-md-0">
+                            <img class="w-100 border-radius-md shadow-lg" src="images/material/color-chaos.svg" alt="image">
+                          </div>
+                      </div>
+                      <div class="col-lg-8 col-md-6 col-12 my-auto">
+                        <div class="card-body ps-lg-0">
+                          <h5 class="mb-0">Pārāk daudz krāsu un animāciju</h5>
+                          <h6 class="text-green font-italic">Trūkums #2</h6>
+                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="pt-3 pb-4" id="count-stats">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-9 mx-auto py-3">
+                  <div class="row">
+                    <div class="col-md-4 position-relative">
+                      <div class="p-3 text-center">
+                        <h1 class="text-gradient text-primary"><span id="state1" countTo="70">1</span></h1>
+                        <h5 class="mt-3">Versija</h5>
+                        <p class="text-sm font-weight-normal">Apraksts par versiju. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+                      <hr class="vertical dark">
+                    </div>
+                    <div class="col-md-4 position-relative">
+                      <div class="p-3 text-center">
+                        <h1 class="text-gradient text-primary"> <span id="state2" countTo="15">2</span></h1>
+                        <h5 class="mt-3">Versija</h5>
+                        <p class="text-sm font-weight-normal">Apraksts par versiju. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+                      <hr class="vertical dark">
+                    </div>
+                    <div class="col-md-4">
+                      <div class="p-3 text-center">
+                        <h1 class="text-gradient text-primary" id="state3" countTo="4">3</h1>
+                        <h5 class="mt-3">Versija</h5>
+                        <p class="text-sm font-weight-normal">Apraksts par versiju. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -126,206 +425,62 @@
             </div>
           </section>
           
-
-
-        <section class="tm-section-2 tm-section-mb" id="tm-section-2">
-            <h2>Dizaina principi - vadlīnijas</h2>
-            <br>
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-12">            
-                    <p><b>+ Vienkārša tipogrāfija</b></p>
-                    <p>Tipogrāfija ir ne tikai teksta līdzeklis, bet arī nozīmīga paša dizaina sastāvdaļa, kas veicina kopējo vizuālo hierarhiju un virza lietotāja uzmanību, izmantojot burtu biezuma, izmēra un krāsu variācijas. Plakanajam dizainam vislabāk parasti ir izmantot <em>sans-serif</em> burtveidolus.</p>
-                    </div>
-                <div class="col-xl-4 col-lg-4 col-md-12">
-                    <p><b>+ Daudz brīvas vietas saturam</b></p>
-                    <p>Baltā telpa tiek stratēģiski izmantota ne tikai kā estētiska izvēle, bet arī kā funkcionāls elements, kas atdala un grupē saturu, uzlabojot lasāmību un lietotāja fokusu. Atstatums starp elementiem novērš vizuālu jucekli, ļaujot lietotājiem viegli orientēties, izprast saskarnes izkārtojumu un labāk uztvert vietnes saturu.</p>
-                    </div>
-                <div class="col-xl-4 col-lg-4 col-md-12">
-                    <p><b>+ Plakanu ikonu, ilustrāciju un elementu izmantošana</b></p>
-                    <p>Plakano ikonu un ilustrāciju vienkāršība ne tikai nodrošina to tūlītēju atpazīstamību, bet arī veicina ātrāku vietnes ielādes laiku un labāku mērogojamību dažādās ierīcēs, ekrāna izmēros un izšķirtspējās, kas ir būtisks lietotāju apmierinātības faktors.</p>                 
-                </div>  
-                <div class="col-xl-6 col-lg-6 col-md-12">
-                    <p><b>+ Divdimensionālu un vienkāršu dizaina elementu iekļaušana</b></p>
-                    <p>Plakanajā dizainā 2D elementi un vienkāršas formas veido vizuālās valodas pamatu, izvairoties no jebkādiem mēģinājumiem atdarināt reālās pasaules sarežģītību ar 3D ilūzijām.</p>
-                </div>   
-                <div class="col-xl-6 col-lg-6 col-md-12">
-                    <p><b>+ Spilgtas, augsta kontrasta krāsas</b></p>
-                    <p>Plakanajā dizainā krāsām netiek pielietotas krāsu pārejas un ēnas, tā vietā izvēloties vienkrāsainas, spilgtas krāsas, kas pastiprina divdimensiju izskatu.</p>
-                </div>   
-            </div>
-        </section>
-
-        <section class="tm-section-3 tm-section-mb" id="tm-section-3">
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-md-5 mb-5 pr-md-5">
-                    <header class="text-center">
-                        <img src="images/flat/icon_01.svg" alt="Home Icon" class="pb-4">
-                    </header>                    
-                    <h2 class="text-center pt-1">Plakanā dizaina ikona</h2>
-                    <h5 class="text-center"><em>Piemērs #1</em></h5>
-                    <p class="text-center">Plakanajām ikonām, kuras tiek izmantotas visbiežāk, ir vienkāršs, divdimensiju dizains ar treknām, vienkrāsainām krāsām, un tām nav nekādu izrotājumu, kas liecina par dziļumu, piemēram, ēnas vai krāsu pārejas.</p>
-                </div>
-
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-md-5 mb-5 pr-md-5">
-                    <header class="text-center">
-                        <img src="images/flat/icon_02.svg" alt="Search Icon" class="pb-4">
-                    </header>  
-                    <h2 class="text-center pt-1">Plakanā dizaina ikona</h2>
-                    <h5 class="text-center"><em>Piemērs #2</em></h5>
-                    <p class="text-center">Plakanā dizaina ikonas uzlabo lietotāja pieredzi, jo tās koncentrējas uz objekta būtību, tādējādi padarot digitālo vidi intuitīvāku.</p>
-                </div>
-
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-md-5 mb-5 pr-md-5 mx-auto">
-                    <header class="text-center">
-                        <i class="fa fa-4x fa-power-off pl-5 pb-5 pr-5 pt-2"></i>
-                    </header>
-                    <h2 class="text-center">Kontūru ikona</h2>
-                    <h5 class="text-center"><em>Piemērs #3</em></h5>
-                    <p class="text-center">Kontūru ikonas, kurām raksturīgas atšķirīgas kontūras un pildījuma neesamība, nodrošina vieglu un gaisīgu dizainu, kas papildina plakanā dizaina uzsvaru uz vienkāršību.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="tm-section-5 tm-section-mb" id="tm-section-5">
-            <div class="row">
-                <div class="col-md-6 tm-mb-sm-4 tm-2col-l">
-                    <div class="image">
-                        <img src="images/flat/advantages.svg" class="img-fluid" />
-                    </div>
-                    <div class="tm-box-3">
-                        <h2>Priekšrocības</h2>
-                        <p>Plakanais dizains piedāvā vairākas priekšrocības, kas padara to par populāru izvēli digitālajām saskarnēm. Vislabāk der ttmekļa vietnēm, kurās prioritāte ir skaidrība un navigācijas vienkāršība, bet nav nepieciešama ļoti interaktīva saskarne.</p>
-                        <div class="text-center">
-                            <a href="#tm-section-6" class="btn btn-big">Lasīt vairāk</a>
+          <section class="py-lg-5">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="card shadow-xl overflow-hidden mb-5">
+                    <div class="row">
+                      <div class="col-lg-5 position-relative bg-cover px-0" style="background-image: url('images/material/bg.jpeg')" loading="lazy">
+                        <div class="z-index-2 text-center d-flex h-100 w-100 d-flex m-auto justify-content-center">
+                          <div class="mask bg-gradient-dark opacity-8"></div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 tm-2col-r">
-                    <div class="image">
-                        <img src="images/flat/disadvantages.svg" class="img-fluid" />
-                    </div>
-                    <div class="tm-box-3">
-                        <header>
-                            <h2>Trūkumi</h2>
-                        </header>
-                        <p>Plakanais dizains rada arī dažus trūkumus, kurus dizaineriem ir jāņem vērā. Šie trūkumi uzsver pārdomātu dizaina lēmumu nozīmi un iespējamo vajadzību iekļaut elementus no citām dizaina pieejām, lai uzlabotu lietojamību un lietotāja pieredzi.</p>
-                        <div class="text-center">
-                            <a href="#tm-section-7" class="btn btn-big">Lasīt vairāk</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="tm-section-4 tm-section-mb" id="tm-section-4">
-            <div class="row">
-            </div>
-        </section>
-
-        <section class="tm-section-6" id="tm-section-6">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="image fit">
-                        <img src="images/flat/advantages_all.svg" class="img-fluid d-none d-lg-block">
-                    </div>
-                </div>
-
-                <div class="col-lg-8 col-md-12 col-sm-12 pl-lg-0">
-                    <div class="media tm-media">
-                        <div class="tm-box-5">
-                            <h2>Uzlabota lietotāja pieredze un fokuss uz saturu</h2>
-                            <p class="mb-0">Izmantojot plakanajam dizainam raksturīgos principus, tiek radīta skaidra vizuālā hierarhija un nepārblīvēts, moderns vietnes izskats, kurā saturs ir prioritārs.</p>
-                        </div>
-                    </div>
-                    <div class="media tm-media">
-                        <div class="tm-box-5">
-                            <h2>Ātrāks ielādes laiks</h2>
-                            <p class="mb-0">Izmantojot stilam raksturīgās īpašības, tiek samazināts datu apjoms, kas jālejupielādē, piekļūstot lapai. Šī pieeja ne tikai uzlabo lietotāju pieredzi, samazinot gaidīšanas laiku, bet arī pozitīvi ietekmē SEO klasifikāciju, jo meklētājprogrammas bieži dod priekšroku vietnēm ar ātrāku ielādes laiku.</p>
-                        </div>
-                    </div>
-                    <div class="media tm-media">
-                        <div class="tm-box-5">
-                            <h2>Mērogojamība</h2>
-                            <p class="mb-0">Plakano dizaina elementu vienkāršība padara tos viegli mērogojamus un dizaini izskatās izteiksmīgi un skaidri dažādos ekrāna izmēros un izšķirtspējās.</p>
-                        </div>
-                    </div>
-                    <div class="media tm-media">
-                        <div class="tm-box-5">
-                            <h2>Simetrisks, režģa izkārtojums</h2>
-                            <p class="mb-0">Plakanā dizainā bieži tiek izmantoti simetriski, uz režģi balstīti izkārtojumi, lai sakārtotu saturu vizuāli pievilcīgā un loģiskā veidā. Būtībā tiem ir galvenā loma satura un elementu strukturēšanā saskarnē, nodrošinot konsekvenci un līdzsvaru dizainā un atvieglojot lietotājiem navigāciju.</p>
-                        </div>
-                    </div>
-                    <div class="media tm-media">
-                        <div class="tm-box-5">
-                            <h2>Atbilst mūsdienu tendencēm</h2>
-                            <p class="mb-0">Plakanais dizains atbilst mūsdienu lietotāju vienkāršības un funkcionalitātes vēlmēm, padarot to populāru pašreizējās UI/UX dizaina tendencēs. Laikā, kad digitālajam saturam var piekļūt no neskaitāmām ierīcēm, plakanā dizaina vienkāršība, mērogojamība un ātra ielāde nodrošina, ka tas joprojām ir efektīvs un vizuāli pievilcīgs neatkarīgi no ierīces.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="tm-section-4 tm-section-mb" id="tm-section-4">
-            <div class="row">
-            </div>
-        </section>
-
-        <section class="tm-section-7"id="tm-section-7">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="image fit">
-                        <img src="images/flat/disadvantages_all.svg" class="img-fluid d-none d-lg-block">
-                    </div>
-                </div>
-
-                <div class="col-lg-8 col-md-12 col-sm-12 pl-lg-0">
-                    <div class="media tm-media">
-                        <div class="media-body tm-box-5">
-                            <h2>Lietojamības problēmas</h2>
-                            <p class="mb-0">Bez tradicionālajām norādēm, piemēram, ēnām un faktūrām, kas liecina par interaktivitāti, lietotājiem var būt grūtāk atšķirt noklikšķināmus elementus no statiskiem, kas var radīt apjukumu.</p>
-                        </div>
-                    </div>
-                    <div class="media tm-media">
-                        <div class="media-body tm-box-5">
-                            <h2>Pārmērīga vienkāršošana</h2>
-                            <p class="mb-0">Plakana dizaina minimālistiskais raksturs dažkārt var izraisīt vizuālā dziļuma un daudzveidības trūkumu, kā arī pārāk daudzu vizuālo norāžu likvidēšanu, kā rezultātā saskarnes ir pārāk vienkāršotas, viendabīgas vai lietotājiem mulsinošas, un tās var nebūt piemērotas visiem satura veidiem vai mērķauditorijām.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="tm-section-8" id="tm-section-8">
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-xs-12">
-                    <div class="contact_message">
-                        <form action="" method="post" class="contact-form">
-                            <div class="row mb-2">
-                                <div class="form-group col-xl-6">
-                                    <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Vārds" required/>
+                      </div>
+                      <div class="col-lg-7">
+                        <form class="p-3" id="contact-form">
+                          <div class="card-header px-4 py-sm-3 py-2">
+                            <h2>Piemērs</h2>
+                            <p class="lead font-italic">Apraksts par formu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                          </div>
+                          <div class="card-body pt-1">
+                            <div class="row">
+                              <div class="col-md-12 pe-2 mb-3">
+                                <div class="input-group input-group-static mb-4">
+                                  <label>Vārds</label>
+                                  <input type="text" class="form-control" placeholder="Vārds Uzvārds">
                                 </div>
-                                <div class="form-group col-xl-6 pl-xl-1">
-                                    <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="E-pasts" required/>
+                              </div>
+                              <div class="col-md-12 pe-2 mb-3">
+                                <div class="input-group input-group-static mb-4">
+                                  <label>E-pasts</label>
+                                  <input type="email" class="form-control" placeholder="piemers@piemers.com">
                                 </div>
+                              </div>
+                              <div class="col-md-12 pe-2 mb-3">
+                                <div class="input-group input-group-static mb-4">
+                                  <label>Ziņojums</label>
+                                  <textarea name="message" class="form-control" id="message" rows="6" placeholder="Problēmas apraksts"></textarea>
+                                </div>
+                              </div>
                             </div>
-                            <div class="form-group">
-                                <textarea id="contact_message" name="contact_message" class="form-control" rows="6" placeholder="Ziņojums" required></textarea>
+                            <div class="row">
+                              <div class="col-md-6 text-end ms-auto">
+                                <button type="submit" class="btn bg-gradient-primary mb-0">Nosūtīt</button>
+                              </div>
                             </div>
-                            <button type="submit" class="btn  tm-btn-submit float-right btn-big">Nosūtīt</button>
+                          </div>
                         </form>
+                      </div>
                     </div>
+                  </div>
                 </div>
-
-                <div class="col-lg-5 col-md-5 col-xs-12 tm-contact-right">
-                    <div class="tm-address-box">
-                        <h2 class="mb-4">Piemērs</h2>
-                        <p class="mb-5"><em>Formā ir izmantots minimālistisks dizains, izvairoties no nevajadzīgiem grafiskiem elementiem, piemēram, krāsu pārejām, ēnām vai faktūrām, kas varētu radīt 3D efektu. Strukturētais izkārtojums uzlabo skaidrību un lasāmību.</em></p>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
-        <footer class="mt-5">
-        </footer>
+          </section>
+          
+      </div>
     </div>
+  </div>
 </body>
+
 </html>
