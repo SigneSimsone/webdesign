@@ -123,11 +123,15 @@ ul.navigation a {
 	display: block;
 	height: 47px;
 	padding: 12px 0 0 20px;
-	color: #fff;
+	color: #412810;
 	font-size: 18px;
 	font-weight: 400;
     text-decoration: none;
 	font-family: Geneva, Tahoma, sans-serif;
+}
+
+ul.navigation a.menu_05, ul.navigation a.menu_06{
+	color: #fff;
 }
 
 .menu_01 { background: url(../images/skeuomorphism/menu_01.png) }
@@ -138,6 +142,10 @@ ul.navigation a {
 .menu_06 { background: url(../images/skeuomorphism/menu_05.png) }
 
 ul.navigation a:hover, ul.navigation a.selected {
+	color: #ffffff;
+}
+
+ul.navigation a:hover.menu_05, ul.navigation a:hover.menu_06, ul.navigation a.selected.menu05,  ul.navigation a.selected.menu06{
 	color: #412810;
 }
 
