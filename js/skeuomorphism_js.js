@@ -79,13 +79,4 @@ $(document).ready(function () {
 
     // apply serialScroll plugin to the slider
     $('#slider').serialScroll(scrollOptions);
-
-    // apply localScroll to hook any other arbitrary links to trigger the effect
-    $.localScroll(scrollOptions);
-
-    // if the URL has a hash, move the slider in to position, 
-    // setting the duration to 1 to not scroll in the very first page load.
-    // it ensures the positioning is absolutely spot on when the pages loads.
-    scrollOptions.duration = 1;
-    $.localScroll.hash(scrollOptions);
 });
