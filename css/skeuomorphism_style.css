@@ -142,11 +142,13 @@ ul.navigation a.menu_05, ul.navigation a.menu_06{
 .menu_06 { background: url(../images/skeuomorphism/menu_05.png) }
 
 ul.navigation a:hover, ul.navigation a.selected {
-	color: #ffffff;
+	color: #412810;
+	font-weight: bold;
 }
 
 ul.navigation a:hover.menu_05, ul.navigation a:hover.menu_06, ul.navigation a.selected.menu05,  ul.navigation a.selected.menu06{
-	color: #412810;
+	color: #ffffff;
+	font-weight: bold;
 }
 
 ul.navigation a:focus {
