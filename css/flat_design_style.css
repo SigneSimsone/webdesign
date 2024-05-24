@@ -239,36 +239,28 @@ body {
   }
   
   .form-control::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #666666;
     opacity: 1;
-    /* Firefox */
   }
   
   .form-control:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
     color: #666666;
   }
   
   .form-control::-ms-input-placeholder {
-    /* Microsoft Edge */
     color: #666666;
   }
   
   .form-control::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #666666;
     opacity: 1;
-    /* Firefox */
   }
   
   .form-control:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
     color: #666666;
   }
   
   .form-control::-ms-input-placeholder {
-    /* Microsoft Edge */
     color: #666666;
   }
   

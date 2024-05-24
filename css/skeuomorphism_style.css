@@ -63,8 +63,8 @@
 
 .content_section_example {
 	display: flex;
-    align-items: flex-start; /* Aligns children at the top */
-    justify-content: space-between; /* Keeps text and switch on opposite ends */
+    align-items: flex-start;
+    justify-content: space-between;
     margin: 0;
 	padding: 0;
 	border: 0;
@@ -83,12 +83,12 @@
 
 .content_section_icons_example {
 	display: flex;
-    flex-wrap: wrap; /* Enable wrapping of items */
+    flex-wrap: wrap;
 }
 
 .icon_text_section{
 	font-size: 13px;
-	align-items: flex-start; /* Align items to the top */
+	align-items: flex-start;
 	width: 80%;
 }
 
@@ -202,18 +202,18 @@ h4 { font-size: 14px; margin: 0 0 5px 0; padding: 0; }
 .float_r { float: right; }
 
 .image_wrapper { 
-	width: 50px; /* Fixed width for icons */
-    height: auto; /* Maintains aspect ratio */
-    margin: 2px 0px 2px 30px; /* Margins around each icon */
+	width: 50px;
+    height: auto;
+    margin: 2px 0px 2px 30px;
 }
 
 #gallery_container { 
-	display: flex;          /* Enable flexbox layout */
-    flex-direction: column; /* Arrange children vertically */
-    align-items: center;    /* Center-align items horizontally */
-    margin-top: 5px;       /* Space above the container */
-    padding-right: 15px;     /* Padding on the right side, if necessary */
-    clear: both;            /* Clears previous floats (if any) */
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    padding-right: 15px;
+    clear: both;
 }
 
 
@@ -228,8 +228,6 @@ h4 { font-size: 14px; margin: 0 0 5px 0; padding: 0; }
 	margin-bottom: 30px; 
 }
 
-
-  
 
 /* light switch */
   .switch {
@@ -365,8 +363,8 @@ h4 { font-size: 14px; margin: 0 0 5px 0; padding: 0; }
 }
 .form_field {
     display: grid;
-    gap: 10px; /* Increased gap from default to 16px for more space between fields */
-    margin-bottom: 16px; /* Consistent margin for bottom of the form field container */
+    gap: 10px;
+    margin-bottom: 16px;
 }
 
 .input_group_label {
